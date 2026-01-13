@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://gigflow.vercel.app" // 👈 replace with your actual Vercel URL
+      "https://service-hive-gigflow.vercel.app/"
     ],
     credentials: true
   })

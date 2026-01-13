@@ -10,8 +10,8 @@ authentication, gig posting, bidding, and hiring workflows.
 
 ## Live Demo
 
--   **Frontend:** https://your-frontend-link.vercel.app
--   **Backend API:** https://your-backend-link.onrender.com
+-   **Frontend:** https://service-hive-gigflow.vercel.app/
+-   **Backend API:** https://servicehive-gigflow.onrender.com
 
 > (Replace the above links with your deployed URLs)
 
