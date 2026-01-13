@@ -2,21 +2,21 @@ import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-// Helper to generate token
 const generateToken = (res, userId) => {
-  const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
-    expiresIn: "7d"
-  });
+  const token = jwt.sign(
+    { userId },
+    process.env.JWT_SECRET,
+    { expiresIn: "7d" }
+  );
 
   res.cookie("token", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    secure: true,
+    sameSite: "none",
     maxAge: 7 * 24 * 60 * 60 * 1000
   });
 };
 
-// REGISTER
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -50,7 +50,6 @@ export const registerUser = async (req, res) => {
   }
 };
 
-// LOGIN
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -77,13 +76,13 @@ export const loginUser = async (req, res) => {
   }
 };
 
-// LOGOUT
 export const logoutUser = (req, res) => {
   res.cookie("token", "", {
     httpOnly: true,
+    secure: true,
+    sameSite: "none",
     expires: new Date(0)
   });
 
   res.json({ message: "Logged out successfully" });
 };
-
