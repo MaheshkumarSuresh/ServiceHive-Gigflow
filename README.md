@@ -10,10 +10,9 @@ authentication, gig posting, bidding, and hiring workflows.
 
 ## Live Demo
 
--   **Frontend:** https://service-hive-gigflow.vercel.app/
+-   **Frontend:** https://service-hive-gigflow.vercel.app
 -   **Backend API:** https://servicehive-gigflow.onrender.com
 
-> (Replace the above links with your deployed URLs)
 
 ------------------------------------------------------------------------
 
@@ -21,7 +20,8 @@ authentication, gig posting, bidding, and hiring workflows.
 
 A 2-minute Loom video demonstrating the complete hiring workflow is
 included in the submission.
-
+    
+-   **Drive Link:** 
 ------------------------------------------------------------------------
 
 ## Features
