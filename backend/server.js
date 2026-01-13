@@ -16,17 +16,32 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// Allow both local + production frontend
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://service-hive-gigflow.vercel.app",
+  "https://servicehive-gigflow.onrender.com"
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://service-hive-gigflow.vercel.app/",
-      "https://servicehive-gigflow.onrender.com/"
-    ],
-    credentials: true
+    origin: (origin, callback) => {
+      // Allow requests with no origin (Postman, server-to-server)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, origin);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
+
+// Handle preflight requests explicitly
+app.options("*", cors());
 
 /* -------------------- Routes -------------------- */
 app.use("/api/auth", authRoutes);
