@@ -21,7 +21,7 @@ authentication, gig posting, bidding, and hiring workflows.
 A 2-minute Loom video demonstrating the complete hiring workflow is
 included in the submission.
     
--   **Drive Link:** 
+-   **Drive Link:** https://drive.google.com/file/d/15wUPgG5uNHmc7QhYGFD5KOlpVCMb1E-W/view?usp=sharing
 ------------------------------------------------------------------------
 
 ## Features
